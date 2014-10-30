@@ -1,5 +1,5 @@
 FROM fedora:20
-RUN yum -y -q install which git stow vim
+RUN yum -y -q install which git stow vim deltarpm tmux
 WORKDIR /root
 # `stow` will refuse to write over existing files
 RUN mv .bashrc .bashrc~ && \
@@ -11,5 +11,6 @@ RUN git submodule update --init && \
     stow bashrc.d
 ENV TERM screen-256color
 WORKDIR /root
+COPY .tmux.conf /root
 CMD ["/bin/bash"]
 
