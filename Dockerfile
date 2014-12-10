@@ -1,5 +1,5 @@
 FROM fedora:20
-RUN yum -y -q install which git stow vim deltarpm tmux && \
+RUN yum -y -q install which git stow vim deltarpm tmux unzip make && \
     cd /root && \
     mv .bashrc .bashrc~ && \
     git clone https://github.com/dminkovsky/dotfiles.git && \
